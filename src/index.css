@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #00b8a9;
+    --color-primary-dark: #008f83;
+    --color-secondary: #1a1d24;
+    --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom Hero & Site-Wide Animations */
+@keyframes waveFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+  50% {
+    transform: translate3d(-12px, -8px, 0) scale(1.05);
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes processScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.process-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: processScroll 42s linear infinite;
+  will-change: transform;
+}
+
+.process-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes lightSweep {
+  0% {
+    stroke-dashoffset: 1400;
+    opacity: 0.1;
+  }
+  45% {
+    opacity: 0.85;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.1;
+  }
+}
+
+@keyframes heroDropFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-36px) scale(0.97);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.hero-drop-top-1 {
+  animation: heroDropFromTop 1s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+.hero-drop-top-2 {
+  animation: heroDropFromTop 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both,
+             textShimmer 7s ease-in-out infinite;
+}
+
+@keyframes heroSlideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(42px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.hero-slide-right {
+  animation: heroSlideFromRight 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+.animate-wave-float {
+  animation: waveFloat 20s ease-in-out infinite;
+}
+
+/* Shine Sweep Button Hover */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-shine:hover::after {
+  left: 130%;
+}
+
+/* Brick & Architectural Textures for Live Sign Visualizer */
+.texture-brick-dark {
+  background-color: #272221;
+  background-image:
+    radial-gradient(circle at 50% 35%, rgba(0, 184, 169, 0.12), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px, transparent 2px, transparent 22px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 48px);
+}
+
+.texture-brick-day {
+  background-color: #7c5646;
+  background-image:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.22), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 2px, transparent 2px, transparent 22px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 2px, transparent 2px, transparent 48px);
+}
+
+.texture-slate-facade {
+  background-color: #161920;
+  background-image:
+    linear-gradient(135deg, rgba(0, 184, 169, 0.08) 0%, rgba(26, 29, 36, 0.95) 100%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 80px);
+}
