@@ -167,15 +167,6 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
-
-            {/* Trust Pill Badge */}
-            <div className="pt-2 flex items-center justify-center">
-              <div className="inline-flex items-center gap-2.5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200/80 shadow-xs text-xs font-semibold text-slate-700 hover:border-teal-300/80 transition-colors">
-                <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-                <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
-                <span>Licensed &amp; Insured in Texas</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
