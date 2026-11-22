@@ -48,7 +48,7 @@ function preloadVideo(src) {
   });
 }
 
-export default function Preloader() {
+export default function Preloader({ onComplete }) {
   const [displayProgress, setDisplayProgress] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const [isDone, setIsDone] = useState(false);
@@ -134,7 +134,10 @@ export default function Preloader() {
             setIsExiting(true);
             document.body.style.overflow = prevOverflow;
             unmountTimer = window.setTimeout(() => {
-              if (!cancelled) setIsDone(true);
+              if (!cancelled) {
+                setIsDone(true);
+                onComplete?.();
+              }
             }, EXIT_DURATION_MS);
           }, 220);
         }

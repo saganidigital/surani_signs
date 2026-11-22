@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -29,17 +29,23 @@ function ScrollToTopAndHash() {
 }
 
 export default function App() {
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
   return (
     <ThemeProvider>
       <OrderModalProvider>
-        <Preloader />
-        <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0f1218] text-slate-800 dark:text-slate-100 transition-colors duration-300">
+        <Preloader onComplete={() => setPreloaderDone(true)} />
+        <div
+          className={`min-h-screen flex flex-col bg-slate-50 dark:bg-[#0f1218] text-slate-800 dark:text-slate-100 transition-colors duration-300 ${
+            preloaderDone ? 'app-ready' : 'app-loading'
+          }`}
+        >
           <ScrollToTopAndHash />
           <Navbar />
           <main className="flex-1">
             <Routes>
               {/* Page 1: Home Page */}
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home preloaderDone={preloaderDone} />} />
 
               {/* Interactive Live Sign Studio Page */}
               <Route path="/visualizer" element={<VisualizerPage />} />

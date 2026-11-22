@@ -133,6 +133,23 @@
   animation: waveFloat 20s ease-in-out infinite;
 }
 
+/* Hold entrance & ambient animations until the preloader completes */
+.app-loading .hero-drop-top-1,
+.app-loading .hero-drop-top-2,
+.app-loading .hero-slide-right,
+.app-loading .animate-wave-float,
+.app-loading .animate-light-sweep,
+.app-loading .animate-marquee,
+.app-loading .process-marquee-track {
+  animation: none !important;
+}
+
+.app-loading .hero-drop-top-1,
+.app-loading .hero-drop-top-2,
+.app-loading .hero-slide-right {
+  opacity: 0;
+}
+
 /* Shine Sweep Button Hover */
 .btn-shine {
   position: relative;

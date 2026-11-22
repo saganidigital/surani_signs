@@ -74,7 +74,7 @@ const PERMIT_STEPS = [
   },
 ];
 
-export default function Home() {
+export default function Home({ preloaderDone = true }) {
   const { openOrderModal } = useOrderModal();
   const [openFaq, setOpenFaq] = useState(0);
   const [activeServiceIdx, setActiveServiceIdx] = useState(0);
@@ -96,8 +96,9 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [reviewsPaused]);
 
-  // Count-up animation when stats strip enters viewport
+  // Count-up animation when stats strip enters viewport (waits for preloader)
   useEffect(() => {
+    if (!preloaderDone) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -109,7 +110,7 @@ export default function Home() {
     );
     if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [preloaderDone]);
 
   useEffect(() => {
     if (!statsVisible) return;
