@@ -5,11 +5,7 @@ import {
   Mail,
   MapPin,
   Camera,
-  Star,
   ArrowRight,
-  ShieldCheck,
-  Clock,
-  CheckCircle2,
 } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES_DATA } from '../data/siteData';
 import { useOrderModal } from '../context/OrderModalContext';
@@ -43,24 +39,6 @@ export default function Footer() {
                 commercial signage, vehicle wraps, custom embroidery, and promotional printing across
                 the entire DFW Metroplex.
               </p>
-
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-                <div className="flex items-center text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <span className="text-xs font-bold text-white">5.0 • Google Verified Reviews</span>
-              </div>
-
-              <div className="flex flex-wrap gap-2 pt-1">
-                <span className="inline-flex items-center gap-1.5 text-xs text-teal-300 bg-teal-500/10 border border-teal-500/20 px-3 py-1 rounded-full">
-                  <ShieldCheck className="w-3.5 h-3.5" /> Licensed &amp; Insured in TX
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-xs text-slate-300 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" /> In-House Farmers Branch Shop
-                </span>
-              </div>
             </div>
 
             {/* Col 2: Exterior & Commercial Signs */}
