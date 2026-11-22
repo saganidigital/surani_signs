@@ -146,12 +146,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
             <p>
               © {new Date().getFullYear()} Surani Signs. All rights reserved. Custom sign company
               serving Dallas and the DFW Metroplex.
             </p>
-            <div className="flex items-center gap-5">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
               <Link to="/" className="hover:text-teal-400 transition-colors">
                 Home
               </Link>
@@ -175,18 +175,18 @@ export default function Footer() {
       </footer>
 
       {/* Sticky Mobile Call & Quote Bar */}
-      <div className="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 grid grid-cols-2 gap-2.5 shadow-[0_-8px_25px_rgba(15,23,42,0.1)]">
+      <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 dark:bg-[#0f1218]/95 backdrop-blur-md border-t border-slate-200 dark:border-white/10 p-2.5 grid grid-cols-2 gap-2.5 shadow-[0_-8px_25px_rgba(15,23,42,0.1)] dark:shadow-[0_-8px_25px_rgba(0,0,0,0.5)] transition-colors duration-300">
         <a
           href={BUSINESS_INFO.phoneHref}
-          className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-sm text-slate-900 bg-slate-100 border border-slate-300"
+          className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-sm text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-white/10 border border-slate-300 dark:border-white/15"
         >
-          <Phone className="w-4 h-4 text-teal-600" />
+          <Phone className="w-4 h-4 text-teal-600 dark:text-[#00b8a9]" />
           <span>Call Now</span>
         </a>
         <button
           type="button"
           onClick={() => openOrderModal()}
-          className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl font-bold text-sm text-white bg-teal-600 shadow-sm cursor-pointer"
+          className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#00b8a9] to-[#0a7e75] shadow-sm cursor-pointer"
         >
           <span>Get Free Quote</span>
           <ArrowRight className="w-4 h-4" />

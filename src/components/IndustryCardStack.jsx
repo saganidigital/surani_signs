@@ -24,10 +24,10 @@ export default function IndustryCardStack({ industries = [], iconMap = {} }) {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center px-1 sm:px-0">
       {/* 3D Layered Vertical Shuffle Deck */}
       <div
-        className="relative w-full max-w-xl h-[250px] sm:h-[240px] select-none"
+        className="relative w-full max-w-xl h-[275px] sm:h-[245px] select-none"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -95,27 +95,27 @@ export default function IndustryCardStack({ industries = [], iconMap = {} }) {
                   'transform 480ms cubic-bezier(0.22, 1, 0.36, 1), opacity 420ms ease',
                 willChange: 'transform, opacity',
               }}
-              className={`absolute inset-x-0 top-0 rounded-3xl bg-white p-7 sm:p-8 border ${
+              className={`absolute inset-x-0 top-0 rounded-3xl bg-white dark:bg-[#1a1d24] p-7 sm:p-8 border ${
                 offset === 0
-                  ? 'border-teal-500/35 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.12)] cursor-pointer'
-                  : 'border-slate-200/90 shadow-md'
+                  ? 'border-teal-500/35 dark:border-teal-400/35 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.12)] dark:shadow-[0_24px_60px_-15px_rgba(0,0,0,0.65)] cursor-pointer'
+                  : 'border-slate-200/90 dark:border-white/10 shadow-md dark:shadow-black/40'
               }`}
             >
               {/* Top Row: Icon + Index Counter */}
               <div className="flex items-center justify-between mb-5">
-                <div className="w-12 h-12 rounded-2xl bg-teal-500/12 text-teal-600 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-teal-500/12 dark:bg-teal-500/15 text-teal-600 dark:text-[#00b8a9] flex items-center justify-center">
                   <IconComp className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-bold tracking-widest text-slate-400 tabular-nums">
+                <span className="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 tabular-nums">
                   {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
                 </span>
               </div>
 
               {/* Industry Title & Recommended Signage Breakdown */}
-              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-2.5">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2.5">
                 {ind.name}
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                 {ind.desc}
               </p>
             </div>
@@ -141,7 +141,7 @@ export default function IndustryCardStack({ industries = [], iconMap = {} }) {
               className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                 isActive
                   ? 'w-7 bg-[#00b8a9]'
-                  : 'w-2 bg-slate-300 hover:bg-slate-400'
+                  : 'w-2 bg-slate-300 dark:bg-white/20 hover:bg-slate-400 dark:hover:bg-white/40'
               }`}
             />
           );

@@ -124,23 +124,23 @@ export default function SignVisualizer({ onSelectDesign }) {
   return (
     <section
       id="sign-visualizer"
-      className="py-20 bg-white relative overflow-hidden border-y border-slate-200/80"
+      className="py-20 bg-white dark:bg-[#0f1218] relative overflow-hidden border-y border-slate-200/80 dark:border-white/10 transition-colors duration-300"
     >
       {/* Subtle Background Wave Watermark */}
       <img
         src="/images/teal-wave-bg.jpg"
         alt=""
         aria-hidden="true"
-        className="absolute -top-24 -right-24 w-[650px] opacity-15 pointer-events-none select-none"
+        className="absolute -top-24 -right-24 w-[650px] opacity-15 dark:opacity-10 pointer-events-none select-none"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Test Your Business Sign Live Before We Build It
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate-600">
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
             Type your business name, upload your logo, compare sign styles in Day or Night LED mode,
             and send your concept directly to our Farmers Branch design team.
           </p>
@@ -148,13 +148,13 @@ export default function SignVisualizer({ onSelectDesign }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Controls Panel */}
-          <div className="lg:col-span-5 bg-slate-50 rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-5">
+          <div className="lg:col-span-5 bg-slate-50 dark:bg-[#15181f] rounded-3xl p-6 sm:p-7 border border-slate-200/90 dark:border-white/10 shadow-sm flex flex-col justify-between space-y-5">
             <div className="space-y-5">
               {/* 1. Business Name & Tagline */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                    <Type className="w-3.5 h-3.5 text-teal-600" />
+                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                    <Type className="w-3.5 h-3.5 text-teal-600 dark:text-[#00b8a9]" />
                     <span>Primary Sign Text</span>
                   </label>
                   <input
@@ -163,11 +163,11 @@ export default function SignVisualizer({ onSelectDesign }) {
                     onChange={(e) => setText(e.target.value)}
                     maxLength={26}
                     placeholder="YOUR BUSINESS"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 font-bold text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#1a1d24] border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 font-bold text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                     <span>Sub-Line / Suite (Optional)</span>
                   </label>
                   <input
@@ -176,15 +176,15 @@ export default function SignVisualizer({ onSelectDesign }) {
                     onChange={(e) => setTagline(e.target.value)}
                     maxLength={36}
                     placeholder="EST. DALLAS TX"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-700 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-[#1a1d24] border border-slate-300 dark:border-white/15 text-slate-700 dark:text-slate-200 placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
               </div>
 
               {/* 2. Sign Construction Style */}
               <div>
-                <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                  <Layers className="w-3.5 h-3.5 text-teal-600" />
+                <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                  <Layers className="w-3.5 h-3.5 text-teal-600 dark:text-[#00b8a9]" />
                   <span>Select Sign Style</span>
                 </label>
                 <div className="grid grid-cols-1 gap-2">
@@ -198,14 +198,14 @@ export default function SignVisualizer({ onSelectDesign }) {
                         className={`text-left px-3.5 py-2.5 rounded-xl border transition-all flex items-center justify-between cursor-pointer ${
                           selected
                             ? 'bg-teal-600 text-white border-teal-600 shadow-md shadow-teal-600/20'
-                            : 'bg-white text-slate-800 border-slate-200 hover:border-teal-400'
+                            : 'bg-white dark:bg-[#1a1d24] text-slate-800 dark:text-slate-200 border-slate-200 dark:border-white/10 hover:border-teal-400'
                         }`}
                       >
                         <div>
                           <div className="text-sm font-bold">{style.name}</div>
                           <div
                             className={`text-xs ${
-                              selected ? 'text-teal-100' : 'text-slate-500'
+                              selected ? 'text-teal-100' : 'text-slate-500 dark:text-slate-400'
                             }`}
                           >
                             {style.subtitle}
@@ -213,7 +213,7 @@ export default function SignVisualizer({ onSelectDesign }) {
                         </div>
                         <span
                           className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                            selected ? 'border-white bg-white text-teal-600' : 'border-slate-300'
+                            selected ? 'border-white bg-white text-teal-600' : 'border-slate-300 dark:border-white/25'
                           }`}
                         >
                           {selected && <span className="w-2 h-2 rounded-full bg-teal-600" />}
@@ -227,8 +227,8 @@ export default function SignVisualizer({ onSelectDesign }) {
               {/* 3. LED Illumination Color & Logo Upload */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                    <Palette className="w-3.5 h-3.5 text-teal-600" />
+                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                    <Palette className="w-3.5 h-3.5 text-teal-600 dark:text-[#00b8a9]" />
                     <span>LED / Face Color</span>
                   </label>
                   <div className="flex items-center gap-2.5">
@@ -240,24 +240,24 @@ export default function SignVisualizer({ onSelectDesign }) {
                         title={c.name}
                         className={`w-8 h-8 rounded-full border-2 transition-transform cursor-pointer ${
                           colorId === c.id
-                            ? 'scale-110 ring-2 ring-offset-2 ring-teal-600 border-slate-900'
-                            : 'border-slate-300 hover:scale-105'
+                            ? 'scale-110 ring-2 ring-offset-2 dark:ring-offset-[#15181f] ring-teal-600 border-slate-900 dark:border-white'
+                            : 'border-slate-300 dark:border-white/25 hover:scale-105'
                         }`}
                         style={{ backgroundColor: c.hex }}
                       />
                     ))}
                   </div>
-                  <div className="mt-1.5 text-xs font-medium text-slate-500">
+                  <div className="mt-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
                     {activeColor.name}
                   </div>
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                    <Upload className="w-3.5 h-3.5 text-teal-600" />
+                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                    <Upload className="w-3.5 h-3.5 text-teal-600 dark:text-[#00b8a9]" />
                     <span>Test Your Logo</span>
                   </label>
-                  <label className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-dashed border-teal-500 bg-teal-50/60 hover:bg-teal-50 text-teal-800 text-xs font-bold cursor-pointer transition-colors">
+                  <label className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-dashed border-teal-500 bg-teal-50/60 dark:bg-teal-500/10 hover:bg-teal-50 dark:hover:bg-teal-500/20 text-teal-800 dark:text-teal-200 text-xs font-bold cursor-pointer transition-colors">
                     <Upload className="w-3.5 h-3.5" />
                     <span>{logoPreview ? 'Change Logo' : 'Upload PNG/JPG'}</span>
                     <input
@@ -271,7 +271,7 @@ export default function SignVisualizer({ onSelectDesign }) {
                     <button
                       type="button"
                       onClick={() => setLogoPreview(null)}
-                      className="mt-1 text-[11px] text-rose-600 hover:underline font-medium"
+                      className="mt-1 text-[11px] text-rose-600 dark:text-rose-400 hover:underline font-medium"
                     >
                       Remove uploaded logo
                     </button>
@@ -294,7 +294,7 @@ export default function SignVisualizer({ onSelectDesign }) {
           {/* Right Live Preview Stage */}
           <div className="lg:col-span-7 flex flex-col">
             <div
-              className={`relative flex-1 min-h-[420px] rounded-3xl overflow-hidden border-2 transition-all duration-500 flex flex-col justify-between p-6 sm:p-8 shadow-2xl ${
+              className={`relative flex-1 min-h-[300px] sm:min-h-[420px] rounded-3xl overflow-hidden border-2 transition-all duration-500 flex flex-col justify-between p-4 sm:p-8 shadow-2xl ${
                 styleId === 'vinyl'
                   ? isNight
                     ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950 border-slate-700'

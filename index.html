@@ -19,8 +19,17 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="https://suranisigns.com/favicon-32x32.png" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('surani-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-500 selection:text-white">
+  <body class="bg-slate-50 dark:bg-[#0f1218] text-slate-800 dark:text-slate-100 antialiased selection:bg-teal-500 selection:text-white transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
