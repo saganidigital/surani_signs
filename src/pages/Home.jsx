@@ -573,7 +573,7 @@ export default function Home() {
          ===================================================================== */}
       <section id="reviews" className="py-20 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="mb-12">
             <div>
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 mb-3">
                 <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
@@ -587,15 +587,6 @@ export default function Home() {
                 operators.
               </p>
             </div>
-            <a
-              href={BUSINESS_INFO.googleMapsUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-sm text-slate-800 bg-slate-100 hover:bg-teal-50 hover:text-teal-700 border border-slate-200 transition-colors shrink-0 self-start md:self-auto"
-            >
-              <span>View on Google Maps</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
