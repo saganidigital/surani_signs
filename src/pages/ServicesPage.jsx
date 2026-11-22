@@ -3,7 +3,6 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import {
   Phone,
   ArrowRight,
-  ArrowLeft,
   ShieldCheck,
   Clock,
   CheckCircle2,
@@ -196,37 +195,6 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Interactive Demo Service Switcher Bar */}
-      <div className="bg-slate-100 border-b border-slate-200/90 py-2.5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 overflow-x-auto no-scrollbar">
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-slate-900 text-white shrink-0 hover:bg-teal-700 transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>All 13 Services</span>
-          </Link>
-          <span className="text-slate-300">|</span>
-          {SERVICES_DATA.map((s) => {
-            const isCurrent = s.slug === activeService.slug;
-            return (
-              <button
-                key={s.slug}
-                type="button"
-                onClick={() => navigate(`/services/${s.slug}`)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer shrink-0 ${
-                  isCurrent
-                    ? 'bg-teal-600 text-white shadow-sm'
-                    : 'bg-white text-slate-700 hover:bg-teal-50 hover:text-teal-700 border border-slate-200'
-                }`}
-              >
-                {s.shortName}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
       {/* 1. SERVICE HERO WITH TEAL/CHARCOAL WAVE ACCENT */}
       <section className="relative overflow-hidden bg-white pt-10 pb-16 lg:py-16 border-b border-slate-200/80">
         <img
