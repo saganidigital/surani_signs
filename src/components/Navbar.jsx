@@ -183,22 +183,6 @@ export default function Navbar() {
                           ))}
                         </ul>
                       </div>
-
-                      <div className="mt-4 p-3.5 rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-                        <div className="text-xs font-semibold text-teal-400 mb-1">
-                          Explore All 13 Services
-                        </div>
-                        <p className="text-xs text-slate-300 mb-2.5">
-                          Compare specs, permits, and turnaround times across DFW.
-                        </p>
-                        <Link
-                          to="/services"
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-teal-600 hover:bg-teal-500 px-3 py-1.5 rounded-lg transition-colors"
-                        >
-                          <span>View Services Hub</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>
