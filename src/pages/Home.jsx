@@ -539,14 +539,14 @@ export default function Home() {
                 key={vid.title}
                 className="rounded-3xl overflow-hidden bg-slate-900 border border-white/10 shadow-xl flex flex-col justify-between"
               >
-                <div className="relative aspect-video bg-black">
+                <div className="relative w-full aspect-video bg-black overflow-hidden">
                   <video
                     src={vid.videoUrl}
                     poster={vid.poster}
                     controls
                     playsInline
                     preload="metadata"
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-5 flex items-center justify-between gap-4">
