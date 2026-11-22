@@ -314,10 +314,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl bg-slate-50 border border-slate-200/90 p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative overflow-hidden">
             <div className="lg:col-span-5 space-y-4">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 text-teal-800">
-                <FileCheck className="w-3.5 h-3.5" />
-                <span>Dallas Sign Code Experts</span>
-              </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
                 Getting a Sign Approved in Dallas Isn’t Simple — We Handle It
               </h2>
