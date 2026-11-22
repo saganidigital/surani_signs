@@ -12,7 +12,6 @@ import {
   ChevronDown,
   Layers,
   MapPin,
-  Star,
 } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES_DATA } from '../data/siteData';
 import { useOrderModal } from '../context/OrderModalContext';
@@ -281,25 +280,12 @@ export default function ServicesPage() {
 
             {/* Right Featured Service Image Card */}
             <div className="lg:col-span-5">
-              <div className="rounded-3xl overflow-hidden bg-slate-900 border-4 border-white shadow-2xl relative group">
+              <div className="rounded-3xl overflow-hidden bg-slate-900 border-4 border-white shadow-2xl relative">
                 <img
                   src={activeService.image}
                   alt={activeService.title}
-                  className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-[360px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/15 text-white">
-                  <div className="flex items-center justify-between text-xs text-teal-300 font-bold mb-1">
-                    <span>In-House Farmers Branch Fabrication</span>
-                    <span className="inline-flex items-center gap-1 text-amber-400">
-                      <Star className="w-3.5 h-3.5 fill-amber-400" /> 5.0 DFW Rated
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-300">
-                    Includes free site survey, photorealistic building mockup, and turnkey DFW
-                    installation.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
