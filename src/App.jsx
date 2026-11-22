@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
 import VisualizerPage from './pages/VisualizerPage';
 import OrderQuoteModal from './components/OrderQuoteModal';
+import Preloader from './components/Preloader';
 import { OrderModalProvider } from './context/OrderModalContext';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -31,6 +32,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <OrderModalProvider>
+        <Preloader />
         <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0f1218] text-slate-800 dark:text-slate-100 transition-colors duration-300">
           <ScrollToTopAndHash />
           <Navbar />
