@@ -575,10 +575,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <div>
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 mb-3">
-                <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-                <span>5.0 ★ Verified Google Reviews</span>
-              </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
                 What Dallas Business Owners Say About Us
               </h2>
