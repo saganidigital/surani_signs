@@ -39,6 +39,7 @@ import {
   SHOP_VIDEOS,
   HOME_FAQS,
 } from '../data/siteData';
+import IndustryCardStack from '../components/IndustryCardStack';
 import { useOrderModal } from '../context/OrderModalContext';
 
 const INDUSTRY_ICONS = {
@@ -490,23 +491,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {INDUSTRIES_SERVED.map((ind) => {
-                const IconComp = INDUSTRY_ICONS[ind.icon] || Building2;
-                return (
-                  <div
-                    key={ind.name}
-                    className="p-6 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-teal-400 hover:shadow-lg transition-all group"
-                  >
-                    <div className="w-11 h-11 rounded-xl bg-teal-500/15 text-teal-600 group-hover:bg-teal-600 group-hover:text-white flex items-center justify-center transition-colors mb-4">
-                      <IconComp className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-extrabold text-slate-900 text-base mb-1.5">{ind.name}</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">{ind.desc}</p>
-                  </div>
-                );
-              })}
-            </div>
+            <IndustryCardStack industries={INDUSTRIES_SERVED} iconMap={INDUSTRY_ICONS} />
           </div>
 
           {/* Why Choose Us */}

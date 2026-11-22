@@ -4,7 +4,6 @@ import {
   Send,
   Upload,
   CheckCircle2,
-  Sparkles,
 } from 'lucide-react';
 import { useOrderModal } from '../context/OrderModalContext';
 
@@ -76,10 +75,6 @@ export default function OrderQuoteModal() {
 
         {/* Modal Header */}
         <div className="pr-10 mb-5">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-teal-600" />
-            <span>Surani Signs Direct Order &amp; Quote</span>
-          </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Order Your Custom Sign
           </h3>
