@@ -5,7 +5,8 @@ const ThemeContext = createContext();
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('surani-theme');
+      const saved =
+        localStorage.getItem('patch4less-theme') || localStorage.getItem('surani-theme');
       if (saved === 'dark' || saved === 'light') return saved;
     }
     return 'light';
@@ -18,7 +19,7 @@ export function ThemeProvider({ children }) {
     } else {
       root.classList.remove('dark');
     }
-    localStorage.setItem('surani-theme', theme);
+    localStorage.setItem('patch4less-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

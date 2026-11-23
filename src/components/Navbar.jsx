@@ -15,6 +15,7 @@ import {
 import { BUSINESS_INFO, SERVICES_DATA } from '../data/siteData';
 import { useOrderModal } from '../context/OrderModalContext';
 import { useTheme } from '../context/ThemeContext';
+import BrandLogo from './BrandLogo';
 
 export default function Navbar() {
   const { openOrderModal } = useOrderModal();
@@ -85,17 +86,10 @@ export default function Navbar() {
 
             <Link
               to="/"
-              className="flex items-center group min-w-0 shrink dark:bg-white/95 dark:px-2 dark:py-1 dark:rounded-lg dark:sm:px-2.5 dark:sm:py-1 dark:sm:rounded-xl transition-colors"
+              aria-label="Patch4Less Home"
+              className="flex items-center group min-w-0 shrink transition-colors"
             >
-              <img
-                src={BUSINESS_INFO.logoUrl}
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
-                }}
-                alt="Patch4Ever Logo"
-                className="h-7 min-[390px]:h-8 sm:h-11 lg:h-12 dark:h-6 dark:min-[390px]:h-7 dark:sm:h-9 dark:lg:h-10 w-auto max-w-[165px] min-[390px]:max-w-[195px] sm:max-w-none object-contain object-left transition-transform duration-300 group-hover:scale-[1.02]"
-              />
+              <BrandLogo size="nav" />
             </Link>
           </div>
 
@@ -292,18 +286,11 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-4 py-3.5 border-b border-slate-200/80 dark:border-white/10">
               <Link
                 to="/"
+                aria-label="Patch4Less Home"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center dark:bg-white/95 dark:px-2 dark:py-1 dark:rounded-lg"
+                className="flex items-center group"
               >
-                <img
-                  src={BUSINESS_INFO.logoUrl}
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
-                  }}
-                  alt="Patch4Ever Logo"
-                  className="h-7 dark:h-6 w-auto object-contain"
-                />
+                <BrandLogo size="drawer" />
               </Link>
               <button
                 type="button"

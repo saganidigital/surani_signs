@@ -7,14 +7,13 @@
     <meta name="geo.placename" content="Farmers Branch, Dallas, Texas" />
     <meta name="geo.position" content="32.922752;-96.908986" />
     <meta name="ICBM" content="32.922752, -96.908986" />
-    <title>Custom Signs in Dallas TX | Sign Maker &amp; Sign Company | Patch4Ever</title>
+    <title>Custom Signs in Dallas TX | Sign Maker &amp; Sign Company | Patch4Less</title>
     <meta
       name="description"
-      content="Patch4Ever is a Dallas sign company. We design, build, and install custom signs, channel letters, monument signs, vehicle wraps, banners, and digital signage across Dallas and DFW. Get a free quote."
+      content="Patch4Less is a Dallas sign company. We design, build, and install custom signs, channel letters, monument signs, vehicle wraps, banners, and digital signage across Dallas and DFW. Get a free quote."
     />
     <link rel="preconnect" href="https://suranisigns.com" />
     <link rel="dns-prefetch" href="https://suranisigns.com" />
-    <link rel="preload" as="image" href="/images/logo.png" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/teal-wave-bg.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +21,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="https://suranisigns.com/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%230f1218' stroke='%2300b8a9' stroke-width='4'/%3E%3Cpath d='M23 47V18.5C23 17.12 24.12 16 25.5 16H35.5C41.85 16 46.5 20.1 46.5 25.75C46.5 31.4 41.85 35.5 35.5 35.5H28.5' fill='none' stroke='%2300e5d1' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M23 35.5H28.5' fill='none' stroke='%23ffffff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
     <script>
       (function () {
         try {
-          if (localStorage.getItem('surani-theme') === 'dark') {
+          var saved = localStorage.getItem('patch4less-theme') || localStorage.getItem('surani-theme');
+          if (saved === 'dark') {
             document.documentElement.classList.add('dark');
           }
         } catch (e) {}
@@ -57,18 +61,35 @@
         gap: 2rem;
       }
       .initial-splash-logo-wrap {
-        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
       }
-      html.dark .initial-splash-logo-wrap {
-        background-color: rgba(255, 255, 255, 0.95);
-        padding: 0.625rem 1rem;
-        border-radius: 1rem;
+      .initial-splash-emblem {
+        width: 2.75rem;
+        height: 2.75rem;
+        flex-shrink: 0;
+        color: #1a1d24;
       }
-      .initial-splash-logo {
-        height: 3rem;
-        width: auto;
-        object-fit: contain;
-        display: block;
+      html.dark .initial-splash-emblem {
+        color: #e2e8f0;
+      }
+      .initial-splash-wordmark {
+        font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+        font-size: 1.875rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      .initial-splash-teal {
+        color: #00b8a9;
+      }
+      .initial-splash-num {
+        color: #0f172a;
+      }
+      html.dark .initial-splash-num {
+        color: #ffffff;
       }
       .initial-splash-track {
         width: 100%;
@@ -105,10 +126,18 @@
   </head>
   <body class="bg-slate-50 dark:bg-[#0f1218] text-slate-800 dark:text-slate-100 antialiased selection:bg-teal-500 selection:text-white transition-colors duration-300">
     <div id="root">
-      <div id="initial-splash" aria-label="Loading Patch4Ever">
+      <div id="initial-splash" aria-label="Loading Patch4Less">
         <div class="initial-splash-inner">
           <div class="initial-splash-logo-wrap">
-            <img src="/images/logo.png" alt="Patch4Ever" class="initial-splash-logo" />
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="initial-splash-emblem" aria-hidden="true">
+              <circle cx="32" cy="32" r="28.5" stroke="currentColor" stroke-width="3" />
+              <circle cx="32" cy="32" r="23.5" stroke="#00b8a9" stroke-width="1.25" stroke-dasharray="3.5 3" opacity="0.7" />
+              <path d="M23 47V18.5C23 17.12 24.12 16 25.5 16H35.5C41.85 16 46.5 20.1 46.5 25.75C46.5 31.4 41.85 35.5 35.5 35.5H28.5" stroke="#00b8a9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M23 35.5H28.5" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" />
+            </svg>
+            <span class="initial-splash-wordmark">
+              <span class="initial-splash-teal">PATCH</span><span class="initial-splash-num">4</span><span class="initial-splash-teal">LESS</span>
+            </span>
           </div>
           <div style="width: 100%; display: flex; flex-direction: column; gap: 0.75rem;">
             <div class="initial-splash-track">

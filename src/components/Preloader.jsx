@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { BUSINESS_INFO } from '../data/siteData';
+import BrandLogo from './BrandLogo';
 import { startMediaPreload } from '../utils/mediaPreloader';
 
 const MIN_DISPLAY_MS = 900;
@@ -120,7 +120,7 @@ export default function Preloader({ onComplete }) {
   return (
     <div
       aria-busy={displayProgress < 100}
-      aria-label="Loading Patch4Ever"
+      aria-label="Loading Patch4Less"
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center px-6 bg-white dark:bg-[#0f1218] transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] will-change-transform ${
         isExiting ? '-translate-y-full pointer-events-none' : 'translate-y-0'
       }`}
@@ -137,17 +137,7 @@ export default function Preloader({ onComplete }) {
         }`}
       >
         {/* Brand Logo */}
-        <div className="dark:bg-white/95 dark:px-4 dark:py-2.5 dark:rounded-2xl transition-all duration-300">
-          <img
-            src={BUSINESS_INFO.logoUrl}
-            onError={(e) => {
-              e.currentTarget.onerror = null;
-              e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
-            }}
-            alt="Patch4Ever"
-            className="h-12 sm:h-14 w-auto object-contain select-none"
-          />
-        </div>
+        <BrandLogo size="lg" />
 
         {/* Minimalist Progress Bar + Numeric Counter */}
         <div className="w-full space-y-3">

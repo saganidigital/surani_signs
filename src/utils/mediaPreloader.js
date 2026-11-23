@@ -1,4 +1,4 @@
-import { BUSINESS_INFO, SERVICES_DATA, SHOP_VIDEOS } from '../data/siteData';
+import { SERVICES_DATA, SHOP_VIDEOS } from '../data/siteData';
 
 const IMAGE_WEIGHT = 1.0;
 const VIDEO_WEIGHT = 4.0;
@@ -18,7 +18,6 @@ const listeners = new Set();
 
 const imageUrls = Array.from(
   new Set([
-    BUSINESS_INFO.logoUrl,
     '/images/teal-wave-bg.jpg',
     '/images/community-mending-apparel.jpg',
     '/images/surani-marketing-solutions.jpg',
@@ -47,14 +46,14 @@ function getPreloadBin() {
   if (typeof document === 'undefined') return null;
   if (preloadBinEl && document.body?.contains(preloadBinEl)) return preloadBinEl;
 
-  const existing = document.getElementById('surani-media-preload-bin');
+  const existing = document.getElementById('patch4less-media-preload-bin');
   if (existing) {
     preloadBinEl = existing;
     return preloadBinEl;
   }
 
   const bin = document.createElement('div');
-  bin.id = 'surani-media-preload-bin';
+  bin.id = 'patch4less-media-preload-bin';
   bin.setAttribute('aria-hidden', 'true');
   // Offscreen rendered container (NOT display:none) so the browser actively buffers <video preload="auto">
   Object.assign(bin.style, {

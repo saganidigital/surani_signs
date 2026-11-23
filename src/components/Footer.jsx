@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES_DATA } from '../data/siteData';
 import { useOrderModal } from '../context/OrderModalContext';
+import BrandLogo from './BrandLogo';
 
 export default function Footer() {
   const { openOrderModal } = useOrderModal();
@@ -22,16 +23,8 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
             {/* Col 1: Brand & Trust */}
             <div className="lg:col-span-4 space-y-5">
-              <Link to="/" className="inline-block bg-white px-4 py-2.5 rounded-xl shadow-sm">
-                <img
-                  src={BUSINESS_INFO.logoUrl}
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
-                  }}
-                  alt="Patch4Ever Logo"
-                  className="h-10 w-auto object-contain"
-                />
+              <Link to="/" aria-label="Patch4Less Home" className="inline-flex items-center group">
+                <BrandLogo size="md" variant="dark" />
               </Link>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Custom sign company in Dallas, TX. We design, permit, fabricate, install, and repair
@@ -160,7 +153,7 @@ export default function Footer() {
 
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
             <p>
-              © {new Date().getFullYear()} Patch4Ever. All rights reserved. Custom sign company
+              © {new Date().getFullYear()} Patch4Less. All rights reserved. Custom sign company
               serving Dallas and the DFW Metroplex.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
