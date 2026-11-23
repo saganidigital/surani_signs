@@ -4,7 +4,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  Camera,
   ArrowRight,
 } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES_DATA } from '../data/siteData';
@@ -131,7 +130,20 @@ export default function Footer() {
                   aria-label={`Follow ${BUSINESS_INFO.instagramHandle} on Instagram`}
                   className="w-11 h-11 rounded-xl bg-white/5 hover:bg-pink-500/20 text-pink-400 border border-white/10 hover:border-pink-400/50 flex items-center justify-center transition-all hover:scale-105"
                 >
-                  <Camera className="w-5 h-5" />
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5"
+                    aria-hidden="true"
+                  >
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
                 </a>
               </div>
 
