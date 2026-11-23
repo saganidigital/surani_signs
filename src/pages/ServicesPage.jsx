@@ -63,6 +63,8 @@ export default function ServicesPage() {
             src="/images/teal-wave-bg.jpg"
             alt=""
             aria-hidden="true"
+            loading="eager"
+            decoding="sync"
             className="absolute inset-0 w-full h-full object-cover opacity-35 dark:opacity-15 animate-wave-float pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/75 dark:from-[#0f1218] dark:via-[#0f1218]/90 dark:to-[#0f1218]/70" />
@@ -114,6 +116,8 @@ export default function ServicesPage() {
                       <img
                         src={service.image}
                         alt={service.title}
+                        loading="eager"
+                        decoding="sync"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -184,6 +188,8 @@ export default function ServicesPage() {
           src="/images/teal-wave-bg.jpg"
           alt=""
           aria-hidden="true"
+          loading="eager"
+          decoding="sync"
           className="absolute inset-0 w-full h-full object-cover opacity-35 dark:opacity-15 animate-wave-float pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 dark:from-[#0f1218] dark:via-[#0f1218]/92 dark:to-[#0f1218]/70" />
@@ -263,6 +269,8 @@ export default function ServicesPage() {
                 <img
                   src={activeService.image}
                   alt={activeService.title}
+                  loading="eager"
+                  decoding="sync"
                   className="w-full h-[240px] sm:h-[320px] lg:h-[360px] object-cover"
                 />
               </div>
@@ -512,6 +520,8 @@ export default function ServicesPage() {
                   <img
                     src={rel.image}
                     alt={rel.title}
+                    loading="eager"
+                    decoding="sync"
                     className="w-20 h-16 rounded-xl object-cover shrink-0"
                   />
                   <div className="flex-1 min-w-0">

@@ -1,55 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { BUSINESS_INFO, SERVICES_DATA, SHOP_VIDEOS } from '../data/siteData';
+import React, { useEffect, useRef, useState } from 'react';
+import { BUSINESS_INFO } from '../data/siteData';
+import { startMediaPreload } from '../utils/mediaPreloader';
 
-const MAX_TIMEOUT_MS = 6000;
-const MIN_DISPLAY_MS = 850;
+const MIN_DISPLAY_MS = 900;
 const EXIT_DURATION_MS = 700;
 
-function preloadImage(src) {
-  return new Promise((resolve) => {
-    if (!src) {
-      resolve();
-      return;
-    }
-    const img = new Image();
-    img.onload = () => resolve();
-    img.onerror = () => resolve();
-    img.src = src;
-  });
-}
-
-function preloadVideo(src) {
-  return new Promise((resolve) => {
-    if (!src || typeof document === 'undefined') {
-      resolve();
-      return;
-    }
-    const video = document.createElement('video');
-    let settled = false;
-
-    const finish = () => {
-      if (settled) return;
-      settled = true;
-      video.removeEventListener('canplaythrough', finish);
-      video.removeEventListener('loadeddata', finish);
-      video.removeEventListener('error', finish);
-      video.src = '';
-      resolve();
-    };
-
-    video.preload = 'auto';
-    video.muted = true;
-    video.playsInline = true;
-    video.addEventListener('canplaythrough', finish, { once: true });
-    video.addEventListener('loadeddata', finish, { once: true });
-    video.addEventListener('error', finish, { once: true });
-    video.src = src;
-    video.load();
-  });
-}
-
 export default function Preloader({ onComplete }) {
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
+
   const [displayProgress, setDisplayProgress] = useState(0);
+  const [mediaState, setMediaState] = useState({
+    progress: 4,
+    loadedImages: 0,
+    totalImages: 0,
+    loadedVideos: 0,
+    totalVideos: 0,
+    fontsReady: false,
+    done: false,
+  });
   const [isExiting, setIsExiting] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
@@ -65,59 +34,37 @@ export default function Preloader({ onComplete }) {
     let unmountTimer = 0;
 
     const startTime = performance.now();
-    let targetProgress = 8; // immediate visual feedback
+    let latestState = {
+      progress: 4,
+      loadedImages: 0,
+      totalImages: 0,
+      loadedVideos: 0,
+      totalVideos: 0,
+      fontsReady: false,
+      done: false,
+    };
     let currentProgress = 0;
     let completed = false;
 
-    // Collect unique images, shop videos, and fonts to preload
-    const imageUrls = Array.from(
-      new Set([
-        BUSINESS_INFO.logoUrl,
-        '/images/teal-wave-bg.jpg',
-        '/images/community-mending-apparel.jpg',
-        '/images/surani-marketing-solutions.jpg',
-        ...SERVICES_DATA.map((s) => s.image).filter(Boolean),
-        ...SHOP_VIDEOS.map((v) => v.poster).filter(Boolean),
-      ])
-    );
-    const videoUrls = SHOP_VIDEOS.map((v) => v.videoUrl).filter(Boolean);
-
-    const tasks = [
-      ...imageUrls.map((url) => preloadImage(url)),
-      ...videoUrls.map((url) => preloadVideo(url)),
-      document.fonts?.ready ? document.fonts.ready.catch(() => {}) : Promise.resolve(),
-    ];
-
-    const totalTasks = tasks.length;
-    let finishedTasks = 0;
-
-    tasks.forEach((task) => {
-      Promise.resolve(task).finally(() => {
-        if (cancelled) return;
-        finishedTasks += 1;
-        const ratio = finishedTasks / totalTasks;
-        targetProgress = Math.max(targetProgress, Math.round(ratio * 100));
-      });
-    });
-
-    // 6-second max safety timeout so slow networks or blocked remote videos never stall the site
-    const safetyTimer = window.setTimeout(() => {
+    const unsubscribe = startMediaPreload((nextState) => {
       if (cancelled) return;
-      targetProgress = 100;
-    }, MAX_TIMEOUT_MS);
+      latestState = nextState;
+      setMediaState(nextState);
+    });
 
     const tick = (now) => {
       if (cancelled) return;
 
       const elapsed = now - startTime;
       const minTimelineCap = Math.min(100, Math.round((elapsed / MIN_DISPLAY_MS) * 100));
-      const effectiveTarget =
-        targetProgress >= 100 ? Math.min(100, minTimelineCap) : Math.min(targetProgress, 96);
+      const effectiveTarget = latestState.done
+        ? Math.min(100, minTimelineCap)
+        : Math.min(latestState.progress, 98);
 
       // Smoothly ease currentProgress toward effectiveTarget
       const delta = effectiveTarget - currentProgress;
       if (delta > 0) {
-        currentProgress += Math.max(delta * 0.14, 0.6);
+        currentProgress += Math.max(delta * 0.14, 0.5);
       }
       if (currentProgress > effectiveTarget) {
         currentProgress = effectiveTarget;
@@ -126,7 +73,7 @@ export default function Preloader({ onComplete }) {
       const rounded = Math.min(100, Math.round(currentProgress));
       setDisplayProgress(rounded);
 
-      if (rounded >= 100 && targetProgress >= 100 && elapsed >= MIN_DISPLAY_MS) {
+      if (rounded >= 100 && latestState.done && elapsed >= MIN_DISPLAY_MS) {
         if (!completed) {
           completed = true;
           exitTimer = window.setTimeout(() => {
@@ -136,10 +83,10 @@ export default function Preloader({ onComplete }) {
             unmountTimer = window.setTimeout(() => {
               if (!cancelled) {
                 setIsDone(true);
-                onComplete?.();
+                onCompleteRef.current?.();
               }
             }, EXIT_DURATION_MS);
-          }, 220);
+          }, 200);
         }
         return;
       }
@@ -151,7 +98,7 @@ export default function Preloader({ onComplete }) {
 
     return () => {
       cancelled = true;
-      window.clearTimeout(safetyTimer);
+      unsubscribe();
       window.clearTimeout(exitTimer);
       window.clearTimeout(unmountTimer);
       window.cancelAnimationFrame(rafId);
@@ -160,6 +107,15 @@ export default function Preloader({ onComplete }) {
   }, [isDone]);
 
   if (isDone) return null;
+
+  let statusLabel = 'Preparing Studio...';
+  if (displayProgress >= 100 && mediaState.done) {
+    statusLabel = 'Ready';
+  } else if (mediaState.totalImages > 0 && mediaState.loadedImages < mediaState.totalImages) {
+    statusLabel = `Loading Photos (${mediaState.loadedImages}/${mediaState.totalImages})`;
+  } else if (mediaState.totalVideos > 0 && mediaState.loadedVideos < mediaState.totalVideos) {
+    statusLabel = `Buffering Videos (${mediaState.loadedVideos}/${mediaState.totalVideos})`;
+  }
 
   return (
     <div
@@ -204,7 +160,7 @@ export default function Preloader({ onComplete }) {
 
           <div className="flex items-center justify-between text-xs font-semibold tracking-wide">
             <span className="text-slate-500 dark:text-slate-400 uppercase tracking-widest text-[11px]">
-              {displayProgress >= 100 ? 'Ready' : 'Loading Studio & Media'}
+              {statusLabel}
             </span>
             <span className="text-slate-900 dark:text-white font-bold tabular-nums text-sm">
               {displayProgress}%

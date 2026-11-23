@@ -142,6 +142,9 @@ export default function Home({ preloaderDone = true }) {
             src="/images/teal-wave-bg.jpg"
             alt=""
             aria-hidden="true"
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
             className="w-full h-full object-cover object-center opacity-40 sm:opacity-50 dark:opacity-20 animate-wave-float select-none transition-opacity duration-1000"
           />
           {/* Multi-Stop Soft Gradient Veil */}
@@ -358,6 +361,8 @@ export default function Home({ preloaderDone = true }) {
                           <img
                             src={service.image}
                             alt={service.title}
+                            loading="eager"
+                            decoding="sync"
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -383,12 +388,20 @@ export default function Home({ preloaderDone = true }) {
                 return (
                   <div className="space-y-6">
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-slate-900">
-                      <img
-                        key={active.slug}
-                        src={active.image}
-                        alt={active.title}
-                        className="w-full h-full object-cover transition-opacity duration-500"
-                      />
+                      {SERVICES_DATA.map((service, i) => (
+                        <img
+                          key={service.slug}
+                          src={service.image}
+                          alt={service.title}
+                          loading="eager"
+                          decoding="sync"
+                          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                            i === activeServiceIdx
+                              ? 'opacity-100 z-10'
+                              : 'opacity-0 z-0 pointer-events-none'
+                          }`}
+                        />
+                      ))}
                     </div>
 
                     <div className="space-y-3">
@@ -719,7 +732,7 @@ export default function Home({ preloaderDone = true }) {
                     poster={vid.poster}
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
