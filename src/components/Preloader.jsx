@@ -120,7 +120,7 @@ export default function Preloader({ onComplete }) {
   return (
     <div
       aria-busy={displayProgress < 100}
-      aria-label="Loading Surani Signs"
+      aria-label="Loading Patch4Ever"
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center px-6 bg-white dark:bg-[#0f1218] transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] will-change-transform ${
         isExiting ? '-translate-y-full pointer-events-none' : 'translate-y-0'
       }`}
@@ -144,7 +144,7 @@ export default function Preloader({ onComplete }) {
               e.currentTarget.onerror = null;
               e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
             }}
-            alt="Surani Signs"
+            alt="Patch4Ever"
             className="h-12 sm:h-14 w-auto object-contain select-none"
           />
         </div>

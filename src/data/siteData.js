@@ -1,14 +1,14 @@
 export const BUSINESS_INFO = {
-  name: 'Surani Signs',
+  name: 'Patch4Ever',
   tagline: 'Custom Sign Company & Visual Branding Studio in Dallas, TX',
   phone: '(214) 876-6784',
   phoneHref: 'tel:+12148766784',
-  email: 'info@suranisigns.com',
+  email: 'info@patch4ever.com',
   address: '2099 Valley View Ln #120, Farmers Branch, TX 75234',
   hours: 'Mon – Fri: 8:00 AM – 6:00 PM',
   googleMapsUrl: 'https://maps.app.goo.gl/Pa2yaQZR9gBnquDy6',
   instagramUrl: 'https://www.instagram.com/surani_signs/?hl=en',
-  instagramHandle: '@surani_signs',
+  instagramHandle: '@patch4ever',
   logoUrl: '/images/logo.png',
   remoteLogoFallback: 'https://suranisigns.com/images/logo.png',
   citiesServed: [
@@ -93,7 +93,7 @@ export const SERVICES_DATA = [
       },
       {
         q: 'Do my landlord and the City of Dallas both have to approve channel letters?',
-        a: 'Yes. Commercial landlords usually specify whether you need a raceway mount or flush mount, and cities require an electrical sign permit. Surani Signs prepares the technical drawings for both approvals.',
+        a: 'Yes. Commercial landlords usually specify whether you need a raceway mount or flush mount, and cities require an electrical sign permit. Patch4Ever prepares the technical drawings for both approvals.',
       },
       {
         q: 'Can you match our exact Pantone brand colors?',
@@ -580,7 +580,7 @@ export const SERVICES_DATA = [
       'High-stitch-count custom embroidery and vibrant full-color DTF (Direct-to-Film) apparel printing for polos, hats, work uniforms, hoodies, and company event t-shirts in Farmers Branch & Dallas.',
     heroHeadline: 'Custom Embroidery & Branded Apparel Printing in Dallas',
     heroSubtext:
-      'Outfit your entire team with professional embroidered polos, structured caps, and ultra-vibrant custom printed t-shirts — digitized and produced in-house at Surani Signs.',
+      'Outfit your entire team with professional embroidered polos, structured caps, and ultra-vibrant custom printed t-shirts — digitized and produced in-house at Patch4Ever.',
     whyItWorks:
       'When your crew steps onto a job site, greets guests at a restaurant, or works a trade show booth, matching branded apparel builds instant credibility. Because we run both multi-head embroidery and DTF printing in the same shop that builds your signs, your brand colors and logos stay 100% consistent everywhere.',
     buildSpecs: [
@@ -680,7 +680,7 @@ export const SERVICES_DATA = [
     heroSubtext:
       'From heavyweight executive business cards to custom-printed event glasses, pens, napkins, and corporate swag — one local Dallas studio for all your visual branding.',
     whyItWorks:
-      'Your storefront sign brings customers through the door; your business card and promotional merchandise stay on their desk long after they leave. Working with Surani Signs means your business cards, apparel, and storefront signage share the exact same typography, color profile, and design polish.',
+      'Your storefront sign brings customers through the door; your business card and promotional merchandise stay on their desk long after they leave. Working with Patch4Ever means your business cards, apparel, and storefront signage share the exact same typography, color profile, and design polish.',
     buildSpecs: [
       {
         title: 'Heavyweight 16pt & 18pt Cardstock',
@@ -860,14 +860,14 @@ export const CUSTOMER_REVIEWS = [
     name: 'Marcus R.',
     location: 'Oak Lawn, Dallas TX',
     service: 'Channel Letter Sign',
-    text: 'Surani Signs handled our channel letter sign from permit to install. Fast, professional, and the sign looks incredible on our Oak Lawn storefront. Would not go anywhere else.',
+    text: 'Patch4Ever handled our channel letter sign from permit to install. Fast, professional, and the sign looks incredible on our Oak Lawn storefront. Would not go anywhere else.',
   },
   {
     initials: 'DK',
     name: 'Dr. Kavitha S.',
     location: 'Plano, TX',
     service: 'Medical Monument Sign',
-    text: 'We needed a monument sign for our medical office in Plano and Surani Signs nailed it. They handled the city permit, matched our brand colors exactly, and finished ahead of schedule.',
+    text: 'We needed a monument sign for our medical office in Plano and Patch4Ever nailed it. They handled the city permit, matched our brand colors exactly, and finished ahead of schedule.',
   },
   {
     initials: 'JT',
@@ -881,7 +881,7 @@ export const CUSTOMER_REVIEWS = [
     name: 'Patricia L.',
     location: 'Garland, TX',
     service: 'Emergency LED Sign Repair',
-    text: 'Called Surani Signs for an emergency sign repair after a storm knocked out our LED channel letters. They were on site the next day and had everything fixed within 48 hours. Incredible service.',
+    text: 'Called Patch4Ever for an emergency sign repair after a storm knocked out our LED channel letters. They were on site the next day and had everything fixed within 48 hours. Incredible service.',
   },
   {
     initials: 'RO',
@@ -895,7 +895,7 @@ export const CUSTOMER_REVIEWS = [
     name: 'Angela M.',
     location: 'Richardson, TX',
     service: 'Lobby Sign, ADA & Window Graphics',
-    text: 'We’ve used Surani Signs three times now — first for our lobby sign, then for ADA signs throughout the building, and most recently for window graphics. Every project has been exactly right.',
+    text: 'We’ve used Patch4Ever three times now — first for our lobby sign, then for ADA signs throughout the building, and most recently for window graphics. Every project has been exactly right.',
   },
 ];
 
@@ -926,7 +926,7 @@ export const SHOP_VIDEOS = [
 export const HOME_FAQS = [
   {
     q: 'What does a custom sign company do?',
-    a: 'A custom sign company designs, builds, installs, and repairs signage engineered for one specific business — instead of selling generic off-the-shelf plaques. Surani Signs handles the entire project in-house: design, city permit paperwork, fabrication, and bucket-truck installation.',
+    a: 'A custom sign company designs, builds, installs, and repairs signage engineered for one specific business — instead of selling generic off-the-shelf plaques. Patch4Ever handles the entire project in-house: design, city permit paperwork, fabrication, and bucket-truck installation.',
   },
   {
     q: 'How much do custom signs cost in Dallas?',
@@ -942,7 +942,7 @@ export const HOME_FAQS = [
   },
   {
     q: 'Do you install digital signage in Dallas and DFW?',
-    a: 'Yes. Surani Signs installs programmable outdoor LED message centers and indoor digital display networks across Dallas and the DFW Metroplex, complete with cloud content software training so you can update messages anytime.',
+    a: 'Yes. Patch4Ever installs programmable outdoor LED message centers and indoor digital display networks across Dallas and the DFW Metroplex, complete with cloud content software training so you can update messages anytime.',
   },
   {
     q: 'Do you repair signs you did not build?',

@@ -29,7 +29,7 @@ export default function Footer() {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
                   }}
-                  alt="Surani Signs Logo"
+                  alt="Patch4Ever Logo"
                   className="h-10 w-auto object-contain"
                 />
               </Link>
@@ -160,7 +160,7 @@ export default function Footer() {
 
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
             <p>
-              © {new Date().getFullYear()} Surani Signs. All rights reserved. Custom sign company
+              © {new Date().getFullYear()} Patch4Ever. All rights reserved. Custom sign company
               serving Dallas and the DFW Metroplex.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">

@@ -190,7 +190,7 @@ export default function Home({ preloaderDone = true }) {
 
             {/* Subtext Animated Smoothly From the Right */}
             <p className="hero-slide-right text-[15px] sm:text-lg text-slate-600 dark:text-slate-300 max-w-[36ch] sm:max-w-2xl mx-auto leading-relaxed font-medium">
-              Surani Signs designs, permits, fabricates, installs, and repairs commercial signage
+              Patch4Ever designs, permits, fabricates, installs, and repairs commercial signage
               for businesses across Dallas and the DFW Metroplex.{' '}
               <strong className="text-slate-800 dark:text-white font-semibold">
                 One team. One call. Full job done under one roof.
@@ -679,7 +679,7 @@ export default function Home({ preloaderDone = true }) {
           <div>
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
               <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-                Why Dallas Businesses Choose Surani Signs
+                Why Dallas Businesses Choose Patch4Ever
               </h2>
             </div>
 

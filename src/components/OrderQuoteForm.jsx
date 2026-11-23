@@ -255,7 +255,7 @@ export default function OrderQuoteForm({ prefilledDesign, defaultService }) {
                         name="sign_text"
                         value={signText}
                         onChange={(e) => setSignText(e.target.value)}
-                        placeholder="e.g. SURANI SIGNS"
+                        placeholder="e.g. PATCH4EVER"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500"
                       />
                     </div>

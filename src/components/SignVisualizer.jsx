@@ -47,7 +47,7 @@ const SIGN_STYLES = [
 const LED_COLORS = [
   {
     id: 'teal',
-    name: 'Surani Signature Teal',
+    name: 'Patch4Ever Signature Teal',
     hex: '#00e5d1',
     face: '#e6fffc',
     dayText: '#008f83',
@@ -93,7 +93,7 @@ const LED_COLORS = [
 ];
 
 export default function SignVisualizer({ onSelectDesign }) {
-  const [text, setText] = useState('SURANI SIGNS');
+  const [text, setText] = useState('PATCH4EVER');
   const [tagline, setTagline] = useState('DALLAS • CUSTOM SIGNAGE');
   const [styleId, setStyleId] = useState('channel');
   const [colorId, setColorId] = useState('teal');

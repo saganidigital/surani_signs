@@ -93,7 +93,7 @@ export default function Navbar() {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
                 }}
-                alt="Surani Signs Logo"
+                alt="Patch4Ever Logo"
                 className="h-7 min-[390px]:h-8 sm:h-11 lg:h-12 dark:h-6 dark:min-[390px]:h-7 dark:sm:h-9 dark:lg:h-10 w-auto max-w-[165px] min-[390px]:max-w-[195px] sm:max-w-none object-contain object-left transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </Link>
@@ -301,7 +301,7 @@ export default function Navbar() {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = BUSINESS_INFO.remoteLogoFallback;
                   }}
-                  alt="Surani Signs Logo"
+                  alt="Patch4Ever Logo"
                   className="h-7 dark:h-6 w-auto object-contain"
                 />
               </Link>
