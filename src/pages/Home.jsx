@@ -131,11 +131,11 @@ export default function Home({ preloaderDone = true }) {
   }, [statsVisible]);
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-clip">
       {/* =====================================================================
           1. ANIMATED WAVE HERO SECTION
          ===================================================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-white/95 to-slate-50 dark:from-[#0f1218] dark:via-[#12161e] dark:to-[#15181f] pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-24 lg:pb-32 border-b border-slate-200/60 dark:border-white/10 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-white/95 to-slate-50 dark:from-[#0f1218] dark:via-[#12161e] dark:to-[#15181f] pt-10 pb-14 sm:pt-16 sm:pb-20 lg:pt-24 lg:pb-32 border-b border-slate-200/60 dark:border-white/10 transition-colors duration-300">
         {/* Layer 1: Animated Breathing Teal & Charcoal Wave Artwork with Smooth Feathering */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <img
@@ -151,7 +151,7 @@ export default function Home({ preloaderDone = true }) {
 
         {/* Layer 2: Animated Subtle SVG Light-Sweep Ribbon Along Wave Curve */}
         <svg
-          className="absolute inset-x-0 bottom-0 w-full h-64 pointer-events-none opacity-60"
+          className="absolute inset-x-0 bottom-0 w-full h-44 sm:h-64 pointer-events-none opacity-60"
           viewBox="0 0 1440 320"
           fill="none"
           preserveAspectRatio="none"
@@ -173,20 +173,20 @@ export default function Home({ preloaderDone = true }) {
         </svg>
 
         {/* Layer 3: Soft Ambient Backlight */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[340px] rounded-full bg-teal-300/15 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[520px] h-[240px] sm:h-[340px] rounded-full bg-teal-300/15 blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-7 flex flex-col items-center">
+          <div className="max-w-4xl mx-auto text-center space-y-5 sm:space-y-7 flex flex-col items-center">
             {/* Main Headline Animated Smoothly From the Top */}
-            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black text-slate-900 dark:text-white leading-[1.12] tracking-tight">
+            <h1 className="text-[1.95rem] min-[390px]:text-[2.25rem] sm:text-5xl xl:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight text-balance">
               <span className="block hero-drop-top-1 text-slate-900 dark:text-white drop-shadow-xs">Custom Signs in Dallas</span>
-              <span className="block mt-2 bg-gradient-to-r from-[#0d7a77] via-[#00b8a9] to-[#0a6663] dark:from-[#2dd4bf] dark:via-[#00e5d1] dark:to-[#00b8a9] bg-clip-text text-transparent hero-drop-top-2">
+              <span className="block mt-1.5 sm:mt-2 bg-gradient-to-r from-[#0d7a77] via-[#00b8a9] to-[#0a6663] dark:from-[#2dd4bf] dark:via-[#00e5d1] dark:to-[#00b8a9] bg-clip-text text-transparent hero-drop-top-2">
                 Built by a Sign Company That Knows DFW
               </span>
             </h1>
 
             {/* Subtext Animated Smoothly From the Right */}
-            <p className="hero-slide-right text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="hero-slide-right text-[15px] sm:text-lg text-slate-600 dark:text-slate-300 max-w-[36ch] sm:max-w-2xl mx-auto leading-relaxed font-medium">
               Surani Signs designs, permits, fabricates, installs, and repairs commercial signage
               for businesses across Dallas and the DFW Metroplex.{' '}
               <strong className="text-slate-800 dark:text-white font-semibold">
@@ -195,11 +195,11 @@ export default function Home({ preloaderDone = true }) {
             </p>
 
             {/* Action CTAs */}
-            <div className="flex items-center justify-center pt-2">
+            <div className="w-full sm:w-auto flex items-center justify-center pt-1 sm:pt-2">
               <button
                 type="button"
                 onClick={() => openOrderModal()}
-                className="btn-shine group inline-flex items-center gap-3 px-8 sm:px-9 py-4 rounded-full font-extrabold text-sm sm:text-base text-white bg-gradient-to-r from-[#00b8a9] to-[#0a7e75] hover:from-[#00a698] hover:to-[#086b63] transition-all duration-300 cursor-pointer shadow-[0_12px_32px_-6px_rgba(0,184,169,0.38)] hover:shadow-[0_16px_38px_-4px_rgba(0,184,169,0.52)] hover:-translate-y-0.5 active:translate-y-0"
+                className="btn-shine group w-full max-w-[280px] sm:w-auto inline-flex items-center justify-center gap-3 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full font-extrabold text-sm sm:text-base text-white bg-gradient-to-r from-[#00b8a9] to-[#0a7e75] hover:from-[#00a698] hover:to-[#086b63] transition-all duration-300 cursor-pointer shadow-[0_12px_32px_-6px_rgba(0,184,169,0.38)] hover:shadow-[0_16px_38px_-4px_rgba(0,184,169,0.52)] hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Order Custom Sign</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -212,17 +212,17 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           2. INFINITE DFW CITIES & CAPABILITIES MARQUEE TICKER
          ===================================================================== */}
-      <div className="bg-[#1a1d24] text-white py-3.5 border-b border-slate-800 overflow-hidden">
+      <div className="bg-[#1a1d24] text-white py-3 sm:py-3.5 border-b border-slate-800 overflow-hidden">
         <div className="animate-marquee flex items-center gap-8 text-xs sm:text-sm font-bold tracking-wide">
           {[...Array(2)].map((_, loopIdx) => (
-            <div key={loopIdx} className="flex items-center gap-8 shrink-0">
+            <div key={loopIdx} className="flex items-center gap-6 sm:gap-8 shrink-0 whitespace-nowrap">
               {BUSINESS_INFO.citiesServed.map((city) => (
-                <span key={`${loopIdx}-${city}`} className="inline-flex items-center gap-2">
+                <span key={`${loopIdx}-${city}`} className="inline-flex items-center gap-2 whitespace-nowrap">
                   <span className="w-2 h-2 rounded-full bg-teal-400" />
                   <span className="text-slate-200">{city}, TX</span>
                 </span>
               ))}
-              <span className="inline-flex items-center gap-2 text-teal-400">
+              <span className="inline-flex items-center gap-2 text-teal-400 whitespace-nowrap">
                 ★ Channel Letters • Monument Signs • Vehicle Wraps • Digital LED • Custom Embroidery
               </span>
             </div>
@@ -233,33 +233,33 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           3. OPEN ARCHITECTURAL COUNT-UP STATS BAND
          ===================================================================== */}
-      <section ref={statsRef} className="py-16 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-white/10 text-center">
-            <div className="py-6 sm:py-2 sm:px-8">
-              <div className="text-5xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight tabular-nums">
+      <section ref={statsRef} className="py-7 sm:py-16 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 divide-x divide-slate-200 dark:divide-white/10 text-center">
+            <div className="py-1 px-2 sm:py-2 sm:px-8">
+              <div className="text-2xl min-[390px]:text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight tabular-nums">
                 {counts.signs}
                 <span className="text-[#00b8a9]">+</span>
               </div>
-              <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              <div className="mt-1.5 sm:mt-2 text-[10px] min-[390px]:text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.18em] leading-snug text-slate-500 dark:text-slate-400">
                 Custom Signs Installed Across DFW
               </div>
             </div>
-            <div className="py-6 sm:py-2 sm:px-8">
-              <div className="text-5xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight tabular-nums">
+            <div className="py-1 px-2 sm:py-2 sm:px-8">
+              <div className="text-2xl min-[390px]:text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight tabular-nums">
                 {counts.cities}
                 <span className="text-[#00b8a9]">+</span>
               </div>
-              <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              <div className="mt-1.5 sm:mt-2 text-[10px] min-[390px]:text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.18em] leading-snug text-slate-500 dark:text-slate-400">
                 DFW Metroplex Cities Served
               </div>
             </div>
-            <div className="py-6 sm:py-2 sm:px-8">
-              <div className="text-5xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight tabular-nums flex items-center justify-center gap-2">
+            <div className="py-1 px-2 sm:py-2 sm:px-8">
+              <div className="text-2xl min-[390px]:text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight tabular-nums flex items-center justify-center gap-1 sm:gap-2">
                 <span>{counts.rating.toFixed(1)}</span>
-                <Star className="w-8 h-8 fill-amber-400 text-amber-400" />
+                <Star className="w-4 h-4 min-[390px]:w-5 min-[390px]:h-5 sm:w-8 sm:h-8 fill-amber-400 text-amber-400 shrink-0" />
               </div>
-              <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              <div className="mt-1.5 sm:mt-2 text-[10px] min-[390px]:text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.18em] leading-snug text-slate-500 dark:text-slate-400">
                 Verified Google Customer Rating
               </div>
             </div>
@@ -270,14 +270,14 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           4. INTERACTIVE EDITORIAL SERVICES INDEX + LIVE PHOTO SPOTLIGHT
          ===================================================================== */}
-      <section id="services" className="py-24 bg-slate-50/70 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
+      <section id="services" className="py-14 sm:py-20 lg:py-24 bg-slate-50/70 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 lg:mb-14">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 Custom Signs &amp; Visual Branding We Build in Dallas
               </h2>
-              <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
+              <p className="mt-2.5 sm:mt-3 text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
                 Hover or select any capability below to preview our work — designed, permitted,
                 built, and installed by one local Farmers Branch team.
               </p>
@@ -291,7 +291,7 @@ export default function Home({ preloaderDone = true }) {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left: Borderless Hairline Editorial List */}
             <div className="lg:col-span-7 divide-y divide-slate-200/90 dark:divide-white/10 border-y border-slate-200/90 dark:border-white/10">
               {SERVICES_DATA.map((service, idx) => {
@@ -311,11 +311,11 @@ export default function Home({ preloaderDone = true }) {
                           setActiveServiceIdx(idx);
                         }
                       }}
-                      className="py-5 flex items-center justify-between gap-4 transition-all"
+                      className="py-4 sm:py-5 flex items-center justify-between gap-4 transition-all"
                     >
-                      <div className="flex items-baseline gap-4 min-w-0">
+                      <div className="flex items-baseline gap-3.5 sm:gap-4 min-w-0">
                         <span
-                          className={`text-xs font-bold tabular-nums transition-colors ${
+                          className={`text-xs font-bold tabular-nums transition-colors shrink-0 ${
                             isActive ? 'text-[#00b8a9]' : 'text-slate-400 dark:text-slate-500'
                           }`}
                         >
@@ -323,9 +323,9 @@ export default function Home({ preloaderDone = true }) {
                         </span>
                         <div className="min-w-0">
                           <h3
-                            className={`text-lg sm:text-xl font-extrabold tracking-tight transition-all duration-300 ${
+                            className={`text-base sm:text-xl font-extrabold tracking-tight transition-all duration-300 ${
                               isActive
-                                ? 'text-teal-700 dark:text-[#00b8a9] translate-x-1.5'
+                                ? 'text-teal-700 dark:text-[#00b8a9] sm:translate-x-1.5'
                                 : 'text-slate-900 dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-[#00b8a9]'
                             }`}
                           >
@@ -424,14 +424,14 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           5. DALLAS SIGN CODE & PERMIT TRUST SECTION (INTERACTIVE TIMELINE)
          ===================================================================== */}
-      <section className="py-24 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
+      <section className="py-14 sm:py-20 lg:py-24 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
-            <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            <div className="lg:col-span-5 space-y-4 sm:space-y-5 lg:sticky lg:top-28">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
                 Getting a Sign Approved in Dallas Isn’t Simple — We Handle It
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                 Dallas and surrounding DFW suburbs have some of the strictest commercial sign codes
                 in Texas. Getting this wrong after a sign is already fabricated costs you weeks and
                 thousands of dollars. We verify the city ordinance before we ever start designing.
@@ -462,11 +462,11 @@ export default function Home({ preloaderDone = true }) {
                       key={step.title}
                       onMouseEnter={() => setActivePermitStep(idx)}
                       onClick={() => setActivePermitStep(idx)}
-                      className="relative py-7 first:pt-0 last:pb-0 cursor-pointer group"
+                      className="relative py-5 sm:py-7 first:pt-0 last:pb-0 cursor-pointer group"
                     >
                       {/* Timeline Node */}
                       <span
-                        className={`absolute -left-8 sm:-left-10 top-7 first:top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`absolute -left-8 sm:-left-10 top-5 sm:top-7 first:top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                           idx === 0 ? '!top-0' : ''
                         } ${
                           isActive
@@ -487,7 +487,7 @@ export default function Home({ preloaderDone = true }) {
                             {step.num}
                           </span>
                           <h3
-                            className={`text-xl font-extrabold transition-colors ${
+                            className={`text-lg sm:text-xl font-extrabold transition-colors ${
                               isActive
                                 ? 'text-slate-900 dark:text-white'
                                 : 'text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
@@ -499,7 +499,7 @@ export default function Home({ preloaderDone = true }) {
                       </div>
 
                       <p
-                        className={`mt-2.5 text-sm sm:text-base leading-relaxed transition-colors duration-300 max-w-xl ${
+                        className={`mt-2 sm:mt-2.5 text-sm sm:text-base leading-relaxed transition-colors duration-300 max-w-xl ${
                           isActive ? 'text-slate-600 dark:text-slate-300' : 'text-slate-400 dark:text-slate-500'
                         }`}
                       >
@@ -517,25 +517,25 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           8. MATERIALS & PRODUCTION TECHNOLOGY (INTERACTIVE TYPOGRAPHIC STREAM)
          ===================================================================== */}
-      <section className="py-24 bg-[#1a1d24] text-white relative overflow-hidden">
+      <section className="py-14 sm:py-20 lg:py-24 bg-[#1a1d24] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 pb-8 border-b border-white/10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-8 sm:mb-12 lg:mb-14 pb-6 sm:pb-8 border-b border-white/10">
             <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
                 What We Build Your Sign With
               </h2>
-              <p className="mt-3 text-slate-300 text-base">
+              <p className="mt-2.5 sm:mt-3 text-slate-300 text-sm sm:text-base">
                 We select commercial-grade substrates and precision fabrication processes based on
                 where your sign installs and how long it needs to endure the Texas climate.
               </p>
             </div>
 
             {/* Interactive Underline Tab Switcher */}
-            <div className="flex items-center gap-8 shrink-0">
+            <div className="flex flex-wrap items-center gap-5 sm:gap-8 shrink-0">
               <button
                 type="button"
                 onClick={() => setActiveMaterialTab('materials')}
-                className={`pb-2.5 text-sm font-bold uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
+                className={`pb-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
                   activeMaterialTab === 'materials'
                     ? 'text-[#00b8a9] border-[#00b8a9]'
                     : 'text-slate-400 border-transparent hover:text-white'
@@ -546,7 +546,7 @@ export default function Home({ preloaderDone = true }) {
               <button
                 type="button"
                 onClick={() => setActiveMaterialTab('methods')}
-                className={`pb-2.5 text-sm font-bold uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
+                className={`pb-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
                   activeMaterialTab === 'methods'
                     ? 'text-[#00b8a9] border-[#00b8a9]'
                     : 'text-slate-400 border-transparent hover:text-white'
@@ -559,7 +559,7 @@ export default function Home({ preloaderDone = true }) {
 
           {/* Interactive Borderless Typographic Spec Stream */}
           <div
-            className="flex flex-wrap items-baseline gap-x-3.5 gap-y-3 sm:gap-x-6 sm:gap-y-5"
+            className="flex flex-wrap items-baseline gap-x-3 gap-y-2.5 sm:gap-x-6 sm:gap-y-5"
             onMouseLeave={() => setHoveredSpecItem(null)}
           >
             {(activeMaterialTab === 'materials' ? MATERIALS_LIST : PRODUCTION_METHODS).map(
@@ -570,9 +570,10 @@ export default function Home({ preloaderDone = true }) {
                   <React.Fragment key={item}>
                     <span
                       onMouseEnter={() => setHoveredSpecItem(item)}
-                      className={`text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight transition-all duration-300 cursor-default ${
+                      onClick={() => setHoveredSpecItem(isHovered ? null : item)}
+                      className={`text-lg sm:text-3xl lg:text-4xl font-extrabold tracking-tight transition-all duration-300 cursor-pointer sm:cursor-default ${
                         isHovered
-                          ? 'text-[#00b8a9] translate-x-1'
+                          ? 'text-[#00b8a9] sm:translate-x-1'
                           : isDimmed
                           ? 'text-white/25'
                           : 'text-white/90'
@@ -581,7 +582,7 @@ export default function Home({ preloaderDone = true }) {
                       {item}
                     </span>
                     {idx < arr.length - 1 && (
-                      <span className="text-teal-500/40 text-xl font-light select-none">/</span>
+                      <span className="text-teal-500/40 text-lg sm:text-xl font-light select-none">/</span>
                     )}
                   </React.Fragment>
                 );
@@ -594,13 +595,13 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           9. OUR 7-STEP PROCESS (SMOOTH CONTINUOUS SCROLL)
          ===================================================================== */}
-      <section id="process" className="py-20 bg-slate-50 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 overflow-hidden transition-colors duration-300">
+      <section id="process" className="py-14 sm:py-20 bg-slate-50 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
               Our 7-Step Turnkey Process
             </h2>
-            <p className="mt-3 text-slate-600 dark:text-slate-300 text-base sm:text-lg">
+            <p className="mt-2.5 sm:mt-3 text-slate-600 dark:text-slate-300 text-sm sm:text-lg">
               One call starts everything. Here is exactly what happens from initial consultation to
               installation day.
             </p>
@@ -608,10 +609,10 @@ export default function Home({ preloaderDone = true }) {
         </div>
 
         {/* Smooth Infinite Horizontal Scroll Track */}
-        <div className="relative w-full overflow-hidden py-4">
+        <div className="relative w-full overflow-hidden py-3 sm:py-4">
           {/* Soft Edge Fade Overlays */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-32 bg-gradient-to-r from-slate-50 dark:from-[#15181f] to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-32 bg-gradient-to-l from-slate-50 dark:from-[#15181f] to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-32 bg-gradient-to-r from-slate-50 dark:from-[#15181f] to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-32 bg-gradient-to-l from-slate-50 dark:from-[#15181f] to-transparent z-10" />
 
           <div className="process-marquee-track">
             {[0, 1].map((dupIdx) => (
@@ -644,15 +645,15 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           10. INDUSTRIES WE SERVE + WHY CHOOSE SURANI SIGNS
          ===================================================================== */}
-      <section className="py-20 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <section className="py-14 sm:py-20 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20">
           {/* Industries */}
           <div>
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                 Industries We Build Signs For
               </h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-300 text-base">
+              <p className="mt-2.5 sm:mt-3 text-slate-600 dark:text-slate-300 text-sm sm:text-base">
                 A hospital needs ADA and wayfinding signs. A restaurant needs an illuminated
                 storefront sign and digital menu boards. We build for your industry, not a template.
               </p>
@@ -663,8 +664,8 @@ export default function Home({ preloaderDone = true }) {
 
           {/* Why Choose Us — 2-Column Hairline Editorial Index */}
           <div>
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
                 Why Dallas Businesses Choose Surani Signs
               </h2>
             </div>
@@ -673,15 +674,15 @@ export default function Home({ preloaderDone = true }) {
               {WHY_CHOOSE_US.map((item, idx) => (
                 <div
                   key={item.title}
-                  className="group relative py-6 border-t border-slate-200 dark:border-white/10 flex items-start gap-5 transition-colors"
+                  className="group relative py-5 sm:py-6 border-t border-slate-200 dark:border-white/10 flex items-start gap-4 sm:gap-5 transition-colors"
                 >
                   {/* Animated Top Teal Accent Line on Hover */}
                   <span className="absolute top-0 left-0 h-[2px] w-0 bg-[#00b8a9] group-hover:w-full transition-all duration-500" />
                   <span className="text-xs font-bold tabular-nums text-slate-400 dark:text-slate-500 group-hover:text-[#00b8a9] pt-1 transition-colors shrink-0">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <div className="transition-transform duration-300 group-hover:translate-x-1">
-                    <h4 className="font-extrabold text-slate-900 dark:text-white text-lg mb-1.5">{item.title}</h4>
+                  <div className="transition-transform duration-300 sm:group-hover:translate-x-1">
+                    <h4 className="font-extrabold text-slate-900 dark:text-white text-base sm:text-lg mb-1.5">{item.title}</h4>
                     <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -694,19 +695,19 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           11. OUR SHOP IN ACTION (VIDEO SHOWCASE) + INSTAGRAM BANNER
          ===================================================================== */}
-      <section id="shop-videos" className="py-20 bg-[#15181f] text-white">
+      <section id="shop-videos" className="py-14 sm:py-20 bg-[#15181f] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
               Real Work. Real Results. Right Here in Dallas.
             </h2>
-            <p className="mt-3 text-slate-300 text-base">
+            <p className="mt-2.5 sm:mt-3 text-slate-300 text-sm sm:text-base">
               Take a look behind the scenes inside our Farmers Branch facility at how we fabricate
               custom signs, print apparel, and produce commercial marketing materials.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-7">
             {SHOP_VIDEOS.map((vid) => (
               <div
                 key={vid.title}
@@ -746,16 +747,16 @@ export default function Home({ preloaderDone = true }) {
          ===================================================================== */}
       <section
         id="reviews"
-        className="py-24 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300"
+        className="py-14 sm:py-20 lg:py-24 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300"
         onMouseEnter={() => setReviewsPaused(true)}
         onMouseLeave={() => setReviewsPaused(false)}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          <div className="text-center mb-8 sm:mb-14">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
               What Dallas Business Owners Say About Us
             </h2>
-            <p className="mt-2.5 text-slate-600 dark:text-slate-300 text-base">
+            <p className="mt-2.5 text-slate-600 dark:text-slate-300 text-sm sm:text-base">
               Real 5-star reviews from DFW retail stores, medical clinics, churches, and fleet
               operators.
             </p>
@@ -764,21 +765,21 @@ export default function Home({ preloaderDone = true }) {
           {(() => {
             const activeRev = CUSTOMER_REVIEWS[activeReviewIdx] || CUSTOMER_REVIEWS[0];
             return (
-              <div className="space-y-12">
+              <div className="space-y-8 sm:space-y-12">
                 {/* Open Pull-Quote Stage */}
-                <div className="text-center max-w-3xl mx-auto min-h-[210px] flex flex-col items-center justify-center">
-                  <div className="flex items-center justify-center gap-1 text-amber-400 mb-5">
+                <div className="text-center max-w-3xl mx-auto min-h-[170px] sm:min-h-[210px] flex flex-col items-center justify-center">
+                  <div className="flex items-center justify-center gap-1 text-amber-400 mb-4 sm:mb-5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-amber-400" />
+                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-400" />
                     ))}
                   </div>
                   <blockquote
                     key={activeRev.name}
-                    className="text-xl sm:text-3xl font-bold text-slate-900 dark:text-white leading-snug tracking-tight"
+                    className="text-lg sm:text-3xl font-bold text-slate-900 dark:text-white leading-snug tracking-tight"
                   >
                     “{activeRev.text}”
                   </blockquote>
-                  <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm">
+                  <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm">
                     <span className="font-extrabold text-slate-900 dark:text-white">{activeRev.name}</span>
                     <span className="text-slate-300 dark:text-slate-600">•</span>
                     <span className="text-slate-500 dark:text-slate-400">{activeRev.location}</span>
@@ -788,7 +789,7 @@ export default function Home({ preloaderDone = true }) {
                 </div>
 
                 {/* Reviewer Selector Tabs */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 border-t border-slate-200 dark:border-white/10 pt-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 border-t border-slate-200 dark:border-white/10 pt-5 sm:pt-6">
                   {CUSTOMER_REVIEWS.map((rev, idx) => {
                     const isActive = idx === activeReviewIdx;
                     return (
@@ -828,10 +829,10 @@ export default function Home({ preloaderDone = true }) {
       {/* =====================================================================
           13. FREQUENTLY ASKED QUESTIONS (BORDERLESS HAIRLINE ACCORDION)
          ===================================================================== */}
-      <section id="faq" className="py-24 bg-slate-50/70 dark:bg-[#15181f] transition-colors duration-300">
+      <section id="faq" className="py-14 sm:py-20 lg:py-24 bg-slate-50/70 dark:bg-[#15181f] transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          <div className="text-center mb-8 sm:mb-14">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
               Frequently Asked Questions
             </h2>
           </div>
@@ -844,7 +845,7 @@ export default function Home({ preloaderDone = true }) {
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? -1 : idx)}
-                    className="w-full py-6 text-left flex items-center justify-between gap-6 cursor-pointer"
+                    className="w-full py-4 sm:py-6 text-left flex items-center justify-between gap-4 sm:gap-6 cursor-pointer"
                   >
                     <span
                       className={`font-extrabold text-base sm:text-lg transition-colors ${
@@ -862,7 +863,7 @@ export default function Home({ preloaderDone = true }) {
                     />
                   </button>
                   {isOpen && (
-                    <div className="pb-6 pr-8 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <div className="pb-5 pr-4 sm:pr-8 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                       {item.a}
                     </div>
                   )}

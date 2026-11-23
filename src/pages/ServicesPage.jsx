@@ -56,9 +56,9 @@ export default function ServicesPage() {
   // ============================================================================
   if (!activeService) {
     return (
-      <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0f1218] transition-colors duration-300">
+      <div className="min-h-screen flex flex-col overflow-x-clip bg-slate-50 dark:bg-[#0f1218] transition-colors duration-300">
         {/* Wave Hero Header */}
-        <section className="relative overflow-hidden bg-white dark:bg-[#0f1218] pt-12 pb-16 border-b border-slate-200 dark:border-white/10">
+        <section className="relative overflow-hidden bg-white dark:bg-[#0f1218] pt-10 pb-12 sm:pt-12 sm:pb-16 border-b border-slate-200 dark:border-white/10">
           <img
             src="/images/teal-wave-bg.jpg"
             alt=""
@@ -69,10 +69,10 @@ export default function ServicesPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
                 Custom Signs, Vehicle Wraps &amp; Commercial Printing in Dallas
               </h1>
-              <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                 Select any of our 13 in-house sign, wrap, apparel, and repair services below to
                 inspect engineering specs, Dallas permit requirements, turnaround timelines, and
                 real project examples.
@@ -80,7 +80,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Clean Underline Category Filter Bar */}
-            <div className="mt-8 sm:mt-10 flex items-center gap-x-6 sm:gap-x-7 border-b border-slate-200 dark:border-white/10 overflow-x-auto flex-nowrap sm:flex-wrap">
+            <div className="no-scrollbar mt-7 sm:mt-10 flex items-center gap-x-5 sm:gap-x-7 border-b border-slate-200 dark:border-white/10 overflow-x-auto flex-nowrap sm:flex-wrap">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
@@ -100,9 +100,9 @@ export default function ServicesPage() {
         </section>
 
         {/* Frameless Editorial Services Grid */}
-        <section className="py-20 bg-white dark:bg-[#0f1218] transition-colors duration-300">
+        <section className="py-14 sm:py-20 bg-white dark:bg-[#0f1218] transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-10 sm:gap-y-14">
               {filteredServices.map((service) => (
                 <Link
                   key={service.slug}
@@ -147,9 +147,9 @@ export default function ServicesPage() {
         </section>
 
         {/* Bottom Order & Quote CTA */}
-        <section className="py-20 bg-slate-50 dark:bg-[#15181f] border-t border-slate-200 dark:border-white/10 transition-colors duration-300">
+        <section className="py-14 sm:py-20 bg-slate-50 dark:bg-[#15181f] border-t border-slate-200 dark:border-white/10 transition-colors duration-300">
           <div className="max-w-4xl mx-auto px-4 text-center space-y-4">
-            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
               Get an Itemized Quote &amp; Digital Mockup
             </h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-sm sm:text-base">
@@ -177,9 +177,9 @@ export default function ServicesPage() {
   const relatedServices = SERVICES_DATA.filter((s) => s.slug !== activeService.slug).slice(0, 3);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#0f1218] transition-colors duration-300">
+    <div className="min-h-screen flex flex-col overflow-x-clip bg-white dark:bg-[#0f1218] transition-colors duration-300">
       {/* 1. SERVICE HERO WITH TEAL/CHARCOAL WAVE ACCENT */}
-      <section className="relative overflow-hidden bg-white dark:bg-[#0f1218] pt-10 pb-16 lg:py-16 border-b border-slate-200/80 dark:border-white/10">
+      <section className="relative overflow-hidden bg-white dark:bg-[#0f1218] pt-8 pb-12 sm:pt-10 sm:pb-16 lg:py-16 border-b border-slate-200/80 dark:border-white/10">
         <img
           src="/images/teal-wave-bg.jpg"
           alt=""
@@ -272,9 +272,9 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. WHY THIS SIGN WORKS + IDEAL INDUSTRIES (BORDERLESS EDITORIAL) */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
+      <section className="py-14 sm:py-20 bg-slate-50/70 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-7 space-y-4">
               <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#00b8a9]">
                 Built for Dallas &amp; DFW Visibility
@@ -315,10 +315,10 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. HOW WE BUILD IT (INTERACTIVE HORIZONTAL ENGINEERING SPEC RAIL) */}
-      <section className="py-24 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
+      <section className="py-14 sm:py-20 lg:py-24 bg-white dark:bg-[#0f1218] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          <div className="max-w-3xl mb-10 sm:mb-14">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
               How We Build Your {activeService.shortName}
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300 text-base">
@@ -390,10 +390,10 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. STEP-BY-STEP PROCESS (INTERACTIVE DARK VERTICAL TIMELINE) */}
-      <section className="py-24 bg-[#1a1d24] text-white">
+      <section className="py-14 sm:py-20 lg:py-24 bg-[#1a1d24] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="max-w-2xl mb-10 sm:mb-14">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
               From First Call to Final Installation
             </h2>
           </div>
@@ -447,8 +447,8 @@ export default function ServicesPage() {
       </section>
 
       {/* 5. SERVICE-SPECIFIC FAQ + RELATED SERVICES (BORDERLESS HAIRLINE LISTS) */}
-      <section className="py-24 bg-slate-50/70 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-14">
+      <section className="py-14 sm:py-20 lg:py-24 bg-slate-50/70 dark:bg-[#15181f] border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
           {/* Left: Borderless Hairline Service FAQs */}
           <div className="lg:col-span-7">
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#00b8a9]">
@@ -530,26 +530,26 @@ export default function ServicesPage() {
       </section>
 
       {/* 6. BOTTOM CALL TO ACTION */}
-      <section className="py-20 bg-white dark:bg-[#0f1218] transition-colors duration-300">
+      <section className="py-14 sm:py-20 bg-white dark:bg-[#0f1218] transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 text-center space-y-4">
-          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
             Ready to Order Your {activeService.shortName}?
           </h2>
           <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-sm sm:text-base">
             Upload your artwork, dimensions, or site photo. We’ll verify your Dallas sign code and deliver a written quote within 1 business day.
           </p>
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <div className="pt-2 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => openOrderModal({ signType: activeService.shortName })}
-              className="btn-shine inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-[#00b8a9] to-[#0a7e75] shadow-lg shadow-teal-500/25 cursor-pointer"
+              className="btn-shine w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-white bg-gradient-to-r from-[#00b8a9] to-[#0a7e75] shadow-lg shadow-teal-500/25 cursor-pointer"
             >
               <span>Get Free {activeService.shortName} Mockup &amp; Quote</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <a
               href={BUSINESS_INFO.phoneHref}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-bold text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/15 border border-slate-300 dark:border-white/15"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/15 border border-slate-300 dark:border-white/15"
             >
               <Phone className="w-4 h-4 text-teal-600 dark:text-[#00b8a9]" />
               <span>Call Us</span>

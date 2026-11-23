@@ -36,7 +36,7 @@ export default function App() {
       <OrderModalProvider>
         <Preloader onComplete={() => setPreloaderDone(true)} />
         <div
-          className={`min-h-screen flex flex-col bg-slate-50 dark:bg-[#0f1218] text-slate-800 dark:text-slate-100 transition-colors duration-300 ${
+          className={`min-h-screen flex flex-col overflow-x-clip bg-slate-50 dark:bg-[#0f1218] text-slate-800 dark:text-slate-100 transition-colors duration-300 ${
             preloaderDone ? 'app-ready' : 'app-loading'
           }`}
         >

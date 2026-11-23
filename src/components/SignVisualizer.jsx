@@ -124,7 +124,7 @@ export default function SignVisualizer({ onSelectDesign }) {
   return (
     <section
       id="sign-visualizer"
-      className="py-20 bg-white dark:bg-[#0f1218] relative overflow-hidden border-y border-slate-200/80 dark:border-white/10 transition-colors duration-300"
+      className="py-12 sm:py-20 bg-white dark:bg-[#0f1218] relative overflow-hidden border-y border-slate-200/80 dark:border-white/10 transition-colors duration-300"
     >
       {/* Subtle Background Wave Watermark */}
       <img
@@ -136,19 +136,19 @@ export default function SignVisualizer({ onSelectDesign }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Test Your Business Sign Live Before We Build It
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          <p className="mt-2.5 sm:mt-3 text-sm sm:text-lg text-slate-600 dark:text-slate-300">
             Type your business name, upload your logo, compare sign styles in Day or Night LED mode,
             and send your concept directly to our Farmers Branch design team.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           {/* Left Controls Panel */}
-          <div className="lg:col-span-5 bg-slate-50 dark:bg-[#15181f] rounded-3xl p-6 sm:p-7 border border-slate-200/90 dark:border-white/10 shadow-sm flex flex-col justify-between space-y-5">
+          <div className="lg:col-span-5 bg-slate-50 dark:bg-[#15181f] rounded-3xl p-4 sm:p-7 border border-slate-200/90 dark:border-white/10 shadow-sm flex flex-col justify-between space-y-5">
             <div className="space-y-5">
               {/* 1. Business Name & Tagline */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -360,7 +360,7 @@ export default function SignVisualizer({ onSelectDesign }) {
                         />
                       )}
                       <div
-                        className="font-black uppercase tracking-wider text-3xl sm:text-5xl md:text-6xl transition-all duration-300 select-none"
+                        className="font-black uppercase tracking-wider text-2xl sm:text-5xl md:text-6xl break-words max-w-full transition-all duration-300 select-none"
                         style={{
                           fontFamily: 'var(--font-heading)',
                           color: isNight ? activeColor.face : activeColor.hex,
@@ -400,7 +400,7 @@ export default function SignVisualizer({ onSelectDesign }) {
                         />
                       )}
                       <div
-                        className="font-black uppercase tracking-widest text-3xl sm:text-5xl md:text-6xl transition-all duration-300 select-none"
+                        className="font-black uppercase tracking-widest text-2xl sm:text-5xl md:text-6xl break-words max-w-full transition-all duration-300 select-none"
                         style={{
                           fontFamily: 'var(--font-heading)',
                           color: isNight ? '#1e242d' : '#cbd5e1',
@@ -455,7 +455,7 @@ export default function SignVisualizer({ onSelectDesign }) {
                             />
                           )}
                           <div
-                            className="font-black uppercase tracking-wider text-2xl sm:text-4xl"
+                            className="font-black uppercase tracking-wider text-xl sm:text-4xl break-words max-w-full"
                             style={{
                               color: isNight ? activeColor.face : activeColor.hex,
                               textShadow: isNight ? activeColor.glow : 'none',
@@ -496,7 +496,7 @@ export default function SignVisualizer({ onSelectDesign }) {
                         />
                       )}
                       <div
-                        className="font-black uppercase tracking-tight text-2xl sm:text-4xl"
+                        className="font-black uppercase tracking-tight text-xl sm:text-4xl break-words max-w-full"
                         style={{
                           color: activeColor.dayText,
                           textShadow: '1px 2px 0 rgba(15,23,42,0.15)',
@@ -526,7 +526,7 @@ export default function SignVisualizer({ onSelectDesign }) {
                         />
                       )}
                       <div
-                        className="font-extrabold uppercase tracking-wider text-2xl sm:text-4xl"
+                        className="font-extrabold uppercase tracking-wider text-xl sm:text-4xl break-words max-w-full"
                         style={{
                           color: isNight ? activeColor.hex : '#0f172a',
                           textShadow: isNight

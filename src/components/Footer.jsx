@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-[#15181f] text-slate-300 pt-16 pb-24 md:pb-12 border-t border-white/10 relative overflow-hidden">
+      <footer className="bg-[#15181f] text-slate-300 pt-12 sm:pt-16 pb-24 md:pb-12 border-t border-white/10 relative overflow-hidden">
         {/* Top Teal/Slate Gradient Accent */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#1a1d24] via-[#00b8a9] to-[#1a1d24]" />
 
@@ -175,7 +175,7 @@ export default function Footer() {
       </footer>
 
       {/* Sticky Mobile Call & Quote Bar */}
-      <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 dark:bg-[#0f1218]/95 backdrop-blur-md border-t border-slate-200 dark:border-white/10 p-2.5 grid grid-cols-2 gap-2.5 shadow-[0_-8px_25px_rgba(15,23,42,0.1)] dark:shadow-[0_-8px_25px_rgba(0,0,0,0.5)] transition-colors duration-300">
+      <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 dark:bg-[#0f1218]/95 backdrop-blur-md border-t border-slate-200 dark:border-white/10 px-3 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] grid grid-cols-2 gap-2.5 shadow-[0_-8px_25px_rgba(15,23,42,0.1)] dark:shadow-[0_-8px_25px_rgba(0,0,0,0.5)] transition-colors duration-300">
         <a
           href={BUSINESS_INFO.phoneHref}
           className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-sm text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-white/10 border border-slate-300 dark:border-white/15"
